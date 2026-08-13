@@ -1,6 +1,19 @@
 import { useState } from 'react'
 import ProjectCard from './components/ProjectCard'
 
+// Image imports from src/images/
+import puppyYoga from './images/puppy_yoga.jpeg'
+import githubLogo from './images/github_logo.png'
+import linkedinLogo from './images/linkedin_logo.png'
+import emailLogo from './images/email_logo.png'
+
+import beachVolleyball from './images/beach_volleyball.jpeg'
+import tennisNatties from './images/tennis_natties.jpeg'
+import pickleball from './images/pickleball.jpeg'
+import rockClimbing from './images/rock_climbing.jpeg'
+import nbhdLolla from './images/nbhd_lolla.jpeg'
+import chicagoAtNight from './images/chicago_at_night.jpeg'
+
 const projects = [
   {
     title: 'Documentation Helper',
@@ -47,12 +60,12 @@ const projects = [
 ]
 
 const photoCards = [
-  { src: '/beach_volleyball.jpeg', caption: 'Beach volleyball' },
-  { src: '/tennis_natties.jpeg', caption: 'Tennis nationals' },
-  { src: '/pickleball.jpeg', caption: 'Pickleball' },
-  { src: '/rock_climbing.jpeg', caption: 'Rock Climbing' },
-  { src: '/nbhd_lolla.jpeg', caption: 'Lollapalooza' },
-  { src: '/chicago_at_night.jpeg', caption: 'Chicago' }
+  { src: beachVolleyball, caption: 'Beach volleyball' },
+  { src: tennisNatties, caption: 'Tennis nationals' },
+  { src: pickleball, caption: 'Pickleball' },
+  { src: rockClimbing, caption: 'Rock Climbing' },
+  { src: nbhdLolla, caption: 'Lollapalooza' },
+  { src: chicagoAtNight, caption: 'Chicago' }
 ]
 
 const experiences = [
@@ -126,7 +139,7 @@ function App() {
             <div className="portrait-wrap">
               <img
                 className="portrait-photo"
-                src="/puppy_yoga.jpeg"
+                src={puppyYoga}
                 alt="Eva Stevanovic portrait"
               />
             </div>
@@ -150,18 +163,17 @@ function App() {
                 <span className="word-item word-3"><span className="word-connector">and</span> building scalable systems.</span>
               </div>
 
-              {/* NEW: Reach out & contact links added to the hero header */}
               <div className="hero-contact-wrap">
                 <p className="hero-reach-out">Feel free to reach out!</p>
                 <div className="hero-contact-links">
                   <a href="https://github.com/evastevanovic" target="_blank" rel="noreferrer" aria-label="GitHub: evastevanovic">
-                    <img src="/github_logo.png" alt="GitHub logo" className="contact-logo" />
+                    <img src={githubLogo} alt="GitHub logo" className="contact-logo" />
                   </a>
                   <a href="https://www.linkedin.com/in/eva-stevanovic/" target="_blank" rel="noreferrer" aria-label="LinkedIn: Eva Stevanovic">
-                    <img src="/linkedin_logo.png" alt="LinkedIn logo" className="contact-logo" />
+                    <img src={linkedinLogo} alt="LinkedIn logo" className="contact-logo" />
                   </a>
                   <a href="mailto:evasd@comcast.net" aria-label="Email: evasd@comcast.net">
-                    <img src="/email_logo.png" alt="Email logo" className="contact-logo" />
+                    <img src={emailLogo} alt="Email logo" className="contact-logo" />
                   </a>
                 </div>
               </div>
@@ -294,13 +306,13 @@ function App() {
           </p>
           <div className="contact-links">
             <a href="https://github.com/evastevanovic" target="_blank" rel="noreferrer" aria-label="GitHub: evastevanovic (Eva Stevanovic)">
-              <img src="/github_logo.png" alt="GitHub logo" className="contact-logo" />
+              <img src={githubLogo} alt="GitHub logo" className="contact-logo" />
             </a>
             <a href="https://www.linkedin.com/in/eva-stevanovic/" target="_blank" rel="noreferrer" aria-label="LinkedIn: Eva Stevanovic | LinkedIn">
-              <img src="/linkedin_logo.png" alt="LinkedIn logo" className="contact-logo" />
+              <img src={linkedinLogo} alt="LinkedIn logo" className="contact-logo" />
             </a>
             <a href="mailto:evasd@comcast.net" aria-label="Email: evasd@comcast.net">
-              <img src="/email_logo.png" alt="Email logo" className="contact-logo" />
+              <img src={emailLogo} alt="Email logo" className="contact-logo" />
             </a>
           </div>
         </section>
@@ -311,7 +323,6 @@ function App() {
           <p className="footer-message">Thanks for checking out my page!</p>
         </div>
       </footer>
-
     </>
   )
 }
