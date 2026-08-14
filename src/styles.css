@@ -154,6 +154,7 @@ a {
   object-fit: cover;
   display: block;
   border-radius: 30px;
+  image-orientation: from-image;
 }
 
 .hero-copy {
