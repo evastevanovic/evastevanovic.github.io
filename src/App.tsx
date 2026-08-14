@@ -73,7 +73,7 @@ const experiences = [
     date: 'Jan 2026 – Present',
     location: 'Chicago, IL',
     role: 'Software Engineering Intern',
-    org: 'J.P. Morgan Chase',
+    org: 'JPMorganChase',
     title:
       'Architected end-to-end LLM pipelines converting raw meeting transcripts and business SOPs into human-friendly requirement specifications and machine-executable agent definitions with automated tool selection, generation, and importing. Developed frontend UIs using React, TypeScript, and JavaScript, while managing state persistence via AWS S3 and streamlining deployment infrastructure using Docker, Terraform, Jenkins, Jules, and Spinnaker.',
     tags: ['LLM Pipelines', 'React / TypeScript', 'AI Agent Orchestration', 'AWS S3', 'Docker / Terraform', 'CI/CD (Jenkins/Spinnaker)']
