@@ -7,6 +7,8 @@ import githubLogo from './images/github_logo.png'
 import linkedinLogo from './images/linkedin_logo.png'
 import emailLogo from './images/email_logo.png'
 
+import acellyHome from './images/acelly_home.png'
+
 import beachVolleyball from './images/beach_volleyball.jpeg'
 import tennisNatties from './images/tennis_natties.jpeg'
 import pickleball from './images/pickleball.jpeg'
@@ -70,7 +72,7 @@ const photoCards = [
 
 const experiences = [
   {
-    date: 'Jan 2026 – Present',
+    date: 'Jan 2026 – Current',
     location: 'Chicago, IL',
     role: 'Software Engineering Intern',
     org: 'JPMorganChase',
@@ -79,7 +81,7 @@ const experiences = [
     tags: ['LLM Pipelines', 'React / TypeScript', 'AI Agent Orchestration', 'AWS S3', 'Docker / Terraform', 'CI/CD (Jenkins/Spinnaker)']
   },
   {
-    date: 'Aug 2025 – Dec 2025',
+    date: 'Aug 2025 – Current',
     location: 'Ann Arbor, MI',
     role: 'Instructional Aide (EECS 281)',
     org: 'University of Michigan College of Engineering',
@@ -253,6 +255,28 @@ function App() {
             <span className="section-kicker">Projects</span>
             <h2 className="sr-only">Projects</h2>
           </div>
+          <a className="project-card featured featured-project" href="https://www.acelly.org" target="_blank" rel="noreferrer">
+            <div className="featured-project-media">
+              <img src={acellyHome} alt="Acelly home screen preview" />
+            </div>
+            <div className="featured-project-body">
+              <div className="card-header">
+                <h3>Acelly</h3>
+                <span className="feature-badge">Featured</span>
+              </div>
+              <p>
+                A full-stack ACL recovery and community platform — built end-to-end with
+                OAuth authentication, Redis-backed caching, and a Postgres data layer,
+                deployed across Vercel and Railway.
+              </p>
+              <ul>
+                {['Next.js', 'TypeScript', 'Express.js', 'PostgreSQL', 'Redis', 'Supabase'].map((tag) => (
+                  <li key={tag}>{tag}</li>
+                ))}
+              </ul>
+            </div>
+          </a>
+
           <div className="project-grid">
             {projects.map((project) => (
               <ProjectCard key={project.title} project={project} />
