@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import ProjectCard from './components/ProjectCard'
 
 // Image imports from src/images/
@@ -14,8 +13,6 @@ import beachVolleyball from './images/beach_volleyball.jpeg'
 import tennisNatties from './images/tennis_natties.jpeg'
 import pickleball from './images/pickleball.jpeg'
 import rockClimbing from './images/rock_climbing.jpeg'
-import nbhdLolla from './images/nbhd_lolla.jpeg'
-import chicagoAtNight from './images/chicago_at_night.jpeg'
 
 const projects = [
   {
@@ -62,13 +59,11 @@ const projects = [
   }
 ]
 
-const photoCards = [
-  { src: beachVolleyball, caption: 'Beach volleyball' },
+const memoryPhotos = [
   { src: tennisNatties, caption: 'Tennis nationals' },
+  { src: beachVolleyball, caption: 'Beach volleyball' },
   { src: pickleball, caption: 'Pickleball' },
-  { src: rockClimbing, caption: 'Rock Climbing' },
-  { src: nbhdLolla, caption: 'Lollapalooza' },
-  { src: chicagoAtNight, caption: 'Chicago' }
+  { src: rockClimbing, caption: 'Rock Climbing' }
 ]
 
 const experiences = [
@@ -111,18 +106,6 @@ const experiences = [
 ]
 
 function App() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-
-  const goToNext = () => {
-    setCurrentIndex((current) => (current + 1) % photoCards.length)
-  }
-
-  const goToPrevious = () => {
-    setCurrentIndex((current) => (current - 1 + photoCards.length) % photoCards.length)
-  }
-
-  const previousIndex = (currentIndex - 1 + photoCards.length) % photoCards.length
-  const nextIndex = (currentIndex + 1) % photoCards.length
 
   return (
     <>
@@ -200,55 +183,21 @@ function App() {
               College of Engineering majoring in Computer Science with a minor in Business. Go blue!
             </p>
             <p>
-              To see what I&apos;ve been up to lately, click through my mini digital scrapbook.
-              Please feel free to reach out, I&apos;m always open to meeting new people and going on
-              new adventures!
+              I'm passionate about coding, sports, and exploring new places. In my downtime, you'll find me playing tennis, beach volleyball, and pickleball!
+              Please feel free to reach out, I'm always open to meeting new people and going on new adventures!
             </p>
             <a className="section-link" href="#projects">
               <span>Check out some of my projects</span>
               <span className="arrow" aria-hidden="true">↓</span>
             </a>
           </div>
-          <div className="stats-card photo-rotator" onClick={goToNext} role="button" tabIndex={0} onKeyDown={(event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
-              event.preventDefault()
-              goToNext()
-            }
-          }} aria-label="Rotate through memory cards">
-            <button
-              type="button"
-              className="carousel-arrow carousel-arrow-left"
-              onClick={(event) => {
-                event.stopPropagation()
-                goToPrevious()
-              }}
-              aria-label="View previous memory"
-            >
-              ‹
-            </button>
-            <div className="photo-card photo-card-left">
-              <img src={photoCards[previousIndex].src} alt={photoCards[previousIndex].caption} loading="lazy" />
-              <span className="photo-caption">{photoCards[previousIndex].caption}</span>
-            </div>
-            <div className="photo-card photo-card-main">
-              <img src={photoCards[currentIndex].src} alt={photoCards[currentIndex].caption} loading="eager" />
-              <span className="photo-caption">{photoCards[currentIndex].caption}</span>
-            </div>
-            <div className="photo-card photo-card-right">
-              <img src={photoCards[nextIndex].src} alt={photoCards[nextIndex].caption} loading="lazy" />
-              <span className="photo-caption">{photoCards[nextIndex].caption}</span>
-            </div>
-            <button
-              type="button"
-              className="carousel-arrow carousel-arrow-right"
-              onClick={(event) => {
-                event.stopPropagation()
-                goToNext()
-              }}
-              aria-label="View next memory"
-            >
-              ›
-            </button>
+          <div className="memory-grid">
+            {memoryPhotos.map((photo) => (
+              <div key={photo.caption} className="memory-photo">
+                <img src={photo.src} alt={photo.caption} loading="lazy" />
+                <span className="photo-caption">{photo.caption}</span>
+              </div>
+            ))}
           </div>
         </section>
 
