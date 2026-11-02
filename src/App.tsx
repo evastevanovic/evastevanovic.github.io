@@ -8,6 +8,7 @@ import linkedinLogo from './images/linkedin_logo.png'
 import emailLogo from './images/email_logo.png'
 
 import acellyHome from './images/acelly_home.png'
+import rPlaceImage from './images/r_place.png'
 
 import beachVolleyball from './images/beach_volleyball.jpeg'
 import tennisNatties from './images/tennis_natties.jpeg'
@@ -143,6 +144,7 @@ function App() {
                 className="portrait-photo"
                 src={puppyYoga}
                 alt="Eva Stevanovic portrait"
+                loading="eager"
               />
             </div>
 
@@ -169,13 +171,13 @@ function App() {
                 <p className="hero-reach-out">Feel free to reach out!</p>
                 <div className="hero-contact-links">
                   <a href="https://github.com/evastevanovic" target="_blank" rel="noreferrer" aria-label="GitHub: evastevanovic">
-                    <img src={githubLogo} alt="GitHub logo" className="contact-logo" />
+                    <img src={githubLogo} alt="GitHub logo" className="contact-logo" loading="lazy" />
                   </a>
                   <a href="https://www.linkedin.com/in/eva-stevanovic/" target="_blank" rel="noreferrer" aria-label="LinkedIn: Eva Stevanovic">
-                    <img src={linkedinLogo} alt="LinkedIn logo" className="contact-logo" />
+                    <img src={linkedinLogo} alt="LinkedIn logo" className="contact-logo" loading="lazy" />
                   </a>
                   <a href="mailto:evasd@comcast.net" aria-label="Email: evasd@comcast.net">
-                    <img src={emailLogo} alt="Email logo" className="contact-logo" />
+                    <img src={emailLogo} alt="Email logo" className="contact-logo" loading="lazy" />
                   </a>
                 </div>
               </div>
@@ -225,15 +227,15 @@ function App() {
               ‹
             </button>
             <div className="photo-card photo-card-left">
-              <img src={photoCards[previousIndex].src} alt={photoCards[previousIndex].caption} />
+              <img src={photoCards[previousIndex].src} alt={photoCards[previousIndex].caption} loading="lazy" />
               <span className="photo-caption">{photoCards[previousIndex].caption}</span>
             </div>
             <div className="photo-card photo-card-main">
-              <img src={photoCards[currentIndex].src} alt={photoCards[currentIndex].caption} />
+              <img src={photoCards[currentIndex].src} alt={photoCards[currentIndex].caption} loading="eager" />
               <span className="photo-caption">{photoCards[currentIndex].caption}</span>
             </div>
             <div className="photo-card photo-card-right">
-              <img src={photoCards[nextIndex].src} alt={photoCards[nextIndex].caption} />
+              <img src={photoCards[nextIndex].src} alt={photoCards[nextIndex].caption} loading="lazy" />
               <span className="photo-caption">{photoCards[nextIndex].caption}</span>
             </div>
             <button
@@ -255,22 +257,20 @@ function App() {
             <span className="section-kicker">Projects</span>
             <h2 className="sr-only">Projects</h2>
           </div>
-          <a className="project-card featured featured-project" href="https://www.acelly.org" target="_blank" rel="noreferrer">
+          <a className="project-card featured featured-project" href="https://github.com/evastevanovic/ethereum-pixel-place" target="_blank" rel="noreferrer">
             <div className="featured-project-media">
-              <img src={acellyHome} alt="Acelly home screen preview" />
+              <img src={rPlaceImage} alt="On-Chain Collaborative Pixel Canvas r/place on Ethereum" loading="lazy" />
             </div>
             <div className="featured-project-body">
               <div className="card-header">
-                <h3>Acelly</h3>
+                <h3>On-Chain Collaborative Pixel Canvas</h3>
                 <span className="feature-badge">Featured</span>
               </div>
               <p>
-                A full-stack ACL recovery and community platform — built end-to-end with
-                OAuth authentication, Redis-backed caching, and a Postgres data layer,
-                deployed across Vercel and Railway.
+                Deployed a <strong>1M-pixel</strong> pay-to-place canvas in <strong>Solidity</strong>, packing <strong>16 pixels per storage slot</strong> to use <strong>32× fewer slots</strong> than naive mappings. Built an <strong>ERC-721</strong> snapshot NFT with fully on-chain SVG metadata, and an <strong>ethers.js</strong> frontend with zoom/pan, batch placement, live event updates, and timelapse replay.
               </p>
               <ul>
-                {['Next.js', 'TypeScript', 'Express.js', 'PostgreSQL', 'Redis', 'Supabase'].map((tag) => (
+                {['Solidity', 'Foundry', 'OpenZeppelin', 'ethers.js', 'ERC-721', 'Sepolia Testnet'].map((tag) => (
                   <li key={tag}>{tag}</li>
                 ))}
               </ul>
@@ -330,13 +330,13 @@ function App() {
           </p>
           <div className="contact-links">
             <a href="https://github.com/evastevanovic" target="_blank" rel="noreferrer" aria-label="GitHub: evastevanovic (Eva Stevanovic)">
-              <img src={githubLogo} alt="GitHub logo" className="contact-logo" />
+              <img src={githubLogo} alt="GitHub logo" className="contact-logo" loading="lazy" />
             </a>
             <a href="https://www.linkedin.com/in/eva-stevanovic/" target="_blank" rel="noreferrer" aria-label="LinkedIn: Eva Stevanovic | LinkedIn">
-              <img src={linkedinLogo} alt="LinkedIn logo" className="contact-logo" />
+              <img src={linkedinLogo} alt="LinkedIn logo" className="contact-logo" loading="lazy" />
             </a>
             <a href="mailto:evasd@comcast.net" aria-label="Email: evasd@comcast.net">
-              <img src={emailLogo} alt="Email logo" className="contact-logo" />
+              <img src={emailLogo} alt="Email logo" className="contact-logo" loading="lazy" />
             </a>
           </div>
         </section>

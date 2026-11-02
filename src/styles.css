@@ -155,6 +155,8 @@ a {
   display: block;
   border-radius: 30px;
   image-orientation: from-image;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .hero-copy {
@@ -628,6 +630,10 @@ a {
   height: 100%;
   object-fit: cover;
   aspect-ratio: 4 / 3;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
 }
 
 .featured-project-body {
@@ -800,6 +806,10 @@ a {
   width: 100%;
   height: 260px;
   object-fit: cover;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
 }
 
 .photo-caption {
