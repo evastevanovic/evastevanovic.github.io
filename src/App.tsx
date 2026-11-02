@@ -277,6 +277,28 @@ function App() {
             </div>
           </a>
 
+          <a className="project-card featured featured-project" href="https://www.acelly.org" target="_blank" rel="noreferrer">
+            <div className="featured-project-media">
+              <img src={acellyHome} alt="Acelly home screen preview" loading="lazy" />
+            </div>
+            <div className="featured-project-body">
+              <div className="card-header">
+                <h3>Acelly</h3>
+                <span className="feature-badge">Featured</span>
+              </div>
+              <p>
+                A full-stack ACL recovery and community platform — built end-to-end with
+                OAuth authentication, Redis-backed caching, and a Postgres data layer,
+                deployed across Vercel and Railway.
+              </p>
+              <ul>
+                {['Next.js', 'TypeScript', 'Express.js', 'PostgreSQL', 'Redis', 'Supabase'].map((tag) => (
+                  <li key={tag}>{tag}</li>
+                ))}
+              </ul>
+            </div>
+          </a>
+
           <div className="project-grid">
             {projects.map((project) => (
               <ProjectCard key={project.title} project={project} />
