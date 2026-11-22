@@ -1,27 +1,72 @@
 import ProjectCard from './components/ProjectCard'
 
 // Image imports from src/images/
-import puppyYoga from './images/puppy_yoga.jpeg'
+import puppyYoga from './images/puppy_yoga.webp'
 import githubLogo from './images/github_logo.png'
 import linkedinLogo from './images/linkedin_logo.png'
 import emailLogo from './images/email_logo.png'
 
-import acellyHome from './images/acelly_home.png'
+import youreOnLogo from './images/youreon-logo.png'
+import acellyHome from './images/acelly_home.webp'
 import rPlaceImage from './images/r_place.png'
 
-import beachVolleyball from './images/beach_volleyball.jpeg'
-import tennisNatties from './images/tennis_natties.jpeg'
-import pickleball from './images/pickleball.jpeg'
-import rockClimbing from './images/rock_climbing.jpeg'
+import beachVolleyball from './images/beach_volleyball.webp'
+import tennisNatties from './images/tennis_natties.webp'
+import pickleball from './images/pickleball.webp'
+import rockClimbing from './images/rock_climbing.webp'
+
+// Featured projects, most technically impressive first.
+const featuredProjects = [
+  {
+    title: "You're On",
+    href: 'https://github.com/AlaricCode/UBC-2026',
+    image: youreOnLogo,
+    imageAlt: "You're On logo",
+    logo: true,
+    description: (
+      <>
+        Bet your friends on anything you can film. Both stakes lock in a <strong>Solana escrow program</strong> in{' '}
+        <strong>one co-signed transaction</strong>, <strong>Claude vision</strong> judges the video, and the winner is paid in
+        about a second. I built the <strong>on-device face recognition</strong> (MobileFaceNet in{' '}
+        <strong>TensorFlow Lite</strong>) that lets you challenge a friend by scanning their face, the{' '}
+        <strong>HMAC-signed match tickets</strong> behind it, and the <strong>React Native</strong> app screens.
+      </>
+    ),
+    tags: ['Solana', 'Rust / Anchor', 'React Native', 'TypeScript', 'Claude API', 'TensorFlow Lite']
+  },
+  {
+    title: 'On-Chain Collaborative Pixel Canvas',
+    href: 'https://github.com/evastevanovic/ethereum-pixel-place',
+    image: rPlaceImage,
+    imageAlt: 'On-Chain Collaborative Pixel Canvas r/place on Ethereum',
+    logo: false,
+    description: (
+      <>
+        Deployed a <strong>1M-pixel</strong> pay-to-place canvas in <strong>Solidity</strong>, packing{' '}
+        <strong>16 pixels per storage slot</strong> to use <strong>32× fewer slots</strong> than naive mappings. Built an{' '}
+        <strong>ERC-721</strong> snapshot NFT with fully on-chain SVG metadata, and an <strong>ethers.js</strong> frontend
+        with zoom/pan, batch placement, live event updates, and timelapse replay.
+      </>
+    ),
+    tags: ['Solidity', 'Foundry', 'OpenZeppelin', 'ethers.js', 'ERC-721', 'Sepolia Testnet']
+  },
+  {
+    title: 'Acelly',
+    href: 'https://www.acelly.org',
+    image: acellyHome,
+    imageAlt: 'Acelly home screen preview',
+    logo: false,
+    description: (
+      <>
+        A full-stack ACL recovery and community platform — built end-to-end with OAuth authentication, Redis-backed
+        caching, and a Postgres data layer, deployed across Vercel and Railway.
+      </>
+    ),
+    tags: ['Next.js', 'TypeScript', 'Express.js', 'PostgreSQL', 'Redis', 'Supabase']
+  }
+]
 
 const projects = [
-  {
-    title: 'Documentation Helper',
-    description:
-      'Agentic RAG documentation helper: indexes docs, grades retrieved context, and generates grounded answers using LangChain + LangGraph.',
-    highlights: ['Python', 'LangChain', 'LangGraph', 'Chroma embeddings', 'Jupyter Notebooks'],
-    repo: 'https://github.com/evastevanovic/documentation-helper'
-  },
   {
     title: 'Langchain',
     description:
@@ -146,8 +191,9 @@ function App() {
 
               <div className="word-stack" aria-label="What I'm focused on">
                 <span className="word-item word-1">architecting AI workflows,</span>
-                <span className="word-item word-2">crafting intuitive UIs,</span>
-                <span className="word-item word-3"><span className="word-connector">and</span> building scalable systems.</span>
+                <span className="word-item word-2">exploring blockchain &amp; crypto,</span>
+                <span className="word-item word-3">crafting intuitive UIs,</span>
+                <span className="word-item word-4"><span className="word-connector">and</span> building scalable systems.</span>
               </div>
 
               <div className="hero-contact-wrap">
@@ -183,6 +229,13 @@ function App() {
               College of Engineering majoring in Computer Science with a minor in Business. Go blue!
             </p>
             <p>
+              I&apos;m also really into <strong>blockchain and crypto</strong>. I&apos;m a member of Michigan Blockchain, and
+              I love building apps where the rules live on-chain: from a 1M-pixel r/place canvas on <strong>Ethereum</strong>{' '}
+              to <strong>You&apos;re On</strong>, where friends&apos; bets settle through a <strong>Solana</strong> escrow. I&apos;m
+              especially excited about making crypto feel invisible, so people get the trust guarantees without needing to know
+              what a wallet or gas fee is.
+            </p>
+            <p>
               I'm passionate about coding, sports, and exploring new places. In my downtime, you'll find me playing tennis, beach volleyball, and pickleball!
               Please feel free to reach out, I'm always open to meeting new people and going on new adventures!
             </p>
@@ -194,7 +247,7 @@ function App() {
           <div className="memory-grid">
             {memoryPhotos.map((photo) => (
               <div key={photo.caption} className="memory-photo">
-                <img src={photo.src} alt={photo.caption} loading="lazy" />
+                <img src={photo.src} alt={photo.caption} loading="lazy" decoding="async" />
                 <span className="photo-caption">{photo.caption}</span>
               </div>
             ))}
@@ -206,47 +259,31 @@ function App() {
             <span className="section-kicker">Projects</span>
             <h2 className="sr-only">Projects</h2>
           </div>
-          <a className="project-card featured featured-project" href="https://github.com/evastevanovic/ethereum-pixel-place" target="_blank" rel="noreferrer">
-            <div className="featured-project-media">
-              <img src={rPlaceImage} alt="On-Chain Collaborative Pixel Canvas r/place on Ethereum" loading="lazy" />
-            </div>
-            <div className="featured-project-body">
-              <div className="card-header">
-                <h3>On-Chain Collaborative Pixel Canvas</h3>
-                <span className="feature-badge">Featured</span>
+          {featuredProjects.map((project) => (
+            <a
+              key={project.title}
+              className="project-card featured featured-project"
+              href={project.href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className={`featured-project-media${project.logo ? ' is-logo' : ''}`}>
+                <img src={project.image} alt={project.imageAlt} loading="lazy" decoding="async" />
               </div>
-              <p>
-                Deployed a <strong>1M-pixel</strong> pay-to-place canvas in <strong>Solidity</strong>, packing <strong>16 pixels per storage slot</strong> to use <strong>32× fewer slots</strong> than naive mappings. Built an <strong>ERC-721</strong> snapshot NFT with fully on-chain SVG metadata, and an <strong>ethers.js</strong> frontend with zoom/pan, batch placement, live event updates, and timelapse replay.
-              </p>
-              <ul>
-                {['Solidity', 'Foundry', 'OpenZeppelin', 'ethers.js', 'ERC-721', 'Sepolia Testnet'].map((tag) => (
-                  <li key={tag}>{tag}</li>
-                ))}
-              </ul>
-            </div>
-          </a>
-
-          <a className="project-card featured featured-project" href="https://www.acelly.org" target="_blank" rel="noreferrer">
-            <div className="featured-project-media">
-              <img src={acellyHome} alt="Acelly home screen preview" loading="lazy" />
-            </div>
-            <div className="featured-project-body">
-              <div className="card-header">
-                <h3>Acelly</h3>
-                <span className="feature-badge">Featured</span>
+              <div className="featured-project-body">
+                <div className="card-header">
+                  <h3>{project.title}</h3>
+                  <span className="feature-badge">Featured</span>
+                </div>
+                <p>{project.description}</p>
+                <ul>
+                  {project.tags.map((tag) => (
+                    <li key={tag}>{tag}</li>
+                  ))}
+                </ul>
               </div>
-              <p>
-                A full-stack ACL recovery and community platform — built end-to-end with
-                OAuth authentication, Redis-backed caching, and a Postgres data layer,
-                deployed across Vercel and Railway.
-              </p>
-              <ul>
-                {['Next.js', 'TypeScript', 'Express.js', 'PostgreSQL', 'Redis', 'Supabase'].map((tag) => (
-                  <li key={tag}>{tag}</li>
-                ))}
-              </ul>
-            </div>
-          </a>
+            </a>
+          ))}
 
           <div className="project-grid">
             {projects.map((project) => (
