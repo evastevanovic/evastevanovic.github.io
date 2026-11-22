@@ -191,9 +191,8 @@ function App() {
 
               <div className="word-stack" aria-label="What I'm focused on">
                 <span className="word-item word-1">architecting AI workflows,</span>
-                <span className="word-item word-2">exploring blockchain &amp; crypto,</span>
-                <span className="word-item word-3">crafting intuitive UIs,</span>
-                <span className="word-item word-4"><span className="word-connector">and</span> building scalable systems.</span>
+                <span className="word-item word-2">building in blockchain &amp; crypto,</span>
+                <span className="word-item word-3"><span className="word-connector">and</span> crafting intuitive UIs.</span>
               </div>
 
               <div className="hero-contact-wrap">
@@ -229,9 +228,9 @@ function App() {
               College of Engineering majoring in Computer Science with a minor in Business. Go blue!
             </p>
             <p>
-              I&apos;m also really into <strong>blockchain and crypto</strong>. I&apos;m a member of Michigan Blockchain, and
-              I love building apps where the rules live on-chain: from a 1M-pixel r/place canvas on <strong>Ethereum</strong>{' '}
-              to <strong>You&apos;re On</strong>, where friends&apos; bets settle through a <strong>Solana</strong> escrow. I&apos;m
+              Beyond AI, I build in blockchain and crypto. As a member of Michigan Blockchain, I&apos;ve shipped apps where
+              the rules live in smart contracts: from a 1M-pixel r/place canvas on Ethereum to You&apos;re On,
+              where friends&apos; bets settle through a Solana escrow. I&apos;m
               especially excited about making crypto feel invisible, so people get the trust guarantees without needing to know
               what a wallet or gas fee is.
             </p>

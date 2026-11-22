@@ -199,7 +199,7 @@ a {
   opacity: 0;
   transform: translateY(-12px);
   animation: fallIn 0.7s ease forwards;
-  animation-delay: 2.5s;
+  animation-delay: 1.9s;
 }
 
 .hero-contact-links {
@@ -210,7 +210,7 @@ a {
   opacity: 0;
   transform: translateY(-12px);
   animation: fallIn 0.7s ease forwards;
-  animation-delay: 2.9s;
+  animation-delay: 2.3s;
 }
 
 .hero-contact-links a {
@@ -255,7 +255,7 @@ a {
   align-items: center;
   gap: 8px;
   margin: 10px 0 auto;
-  min-height: 156px;
+  min-height: 116px;
 }
 
 .word-item {
@@ -284,10 +284,6 @@ a {
 
 .word-3 {
   animation-delay: 1.3s;
-}
-
-.word-4 {
-  animation-delay: 1.9s;
 }
 
 @keyframes fallIn {
